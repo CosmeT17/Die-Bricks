@@ -35,6 +35,9 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_kaxtj")
 metadata/_edit_lock_ = true
 
+[node name="Marker2D" type="Marker2D" parent="Paddle"]
+position = Vector2(0, 32)
+
 [node name="Ball" type="RigidBody2D" parent="."]
 position = Vector2(320, 288)
 physics_material_override = SubResource("PhysicsMaterial_5ts3g")
