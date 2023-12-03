@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk5yfomv422jh"]
+
+[ext_resource type="Script" path="res://Scripts/Paddle.gd" id="1_6tsrj"]
+[ext_resource type="Texture2D" uid="uid://jk35hbo5tp5q" path="res://Textures/Paddle.png" id="2_50acd"]
+[ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxtj"]
+size = Vector2(80, 8)
+
+[node name="World" type="Node2D"]
+
+[node name="Paddle" type="CharacterBody2D" parent="."]
+position = Vector2(320, 336)
+script = ExtResource("1_6tsrj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paddle"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_50acd")
+metadata/_edit_lock_ = true
+
+[node name="Collision" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource("RectangleShape2D_kaxtj")
+metadata/_edit_lock_ = true
+
+[node name="Anchor" type="Marker2D" parent="Paddle"]
+position = Vector2(0, 32)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionPolygon2D" parent="Walls"]
+polygon = PackedVector2Array(0, 384, -32, 384, -32, -32, 672, -32, 672, 384, 640, 384, 640, 0, 0, 0)
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Brick1" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 48)
+
+[node name="Brick2" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 48)
+
+[node name="Brick3" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(448, 48)
+
+[node name="Brick4" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 48)
+
+[node name="Brick5" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(192, 48)
+
+[node name="Brick6" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(128, 48)
+
+[node name="Brick7" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(512, 48)
+
+[node name="Brick8" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(64, 48)
+
+[node name="Brick9" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(576, 48)
+
+[node name="Brick10" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 144)
+
+[node name="Brick11" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(128, 80)
+
+[node name="Brick12" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(192, 80)
+
+[node name="Brick13" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 80)
+
+[node name="Brick14" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 80)
+
+[node name="Brick15" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 80)
+
+[node name="Brick16" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(448, 80)
+
+[node name="Brick17" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(512, 80)
+
+[node name="Brick18" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 144)
+
+[node name="Brick19" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 144)
+
+[node name="Brick20" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 176)
+
+[node name="Brick21" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(192, 112)
+
+[node name="Brick22" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 112)
+
+[node name="Brick23" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 112)
+
+[node name="Brick24" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 112)
+
+[node name="Brick25" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(448, 112)
