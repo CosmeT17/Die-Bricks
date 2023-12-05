@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-const SPEEDUP = 400
-const MAXSPEED = 30000
+@export var speedup: int = 10
+@export var maxspeed: int = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,12 +14,14 @@ func _physics_process(delta):
 	for body in bodies:
 		if body.is_in_group("Bricks"):
 			body.queue_free()
+			get_node("/root/World").score += 5
 			
 		elif body.name == "Paddle":
 			var speed = linear_velocity.length()
 			var direction = position - body.get_node("Anchor").global_position
-			var velocity = direction.normalized() * min(speed+SPEEDUP*delta, MAXSPEED*delta)
+			var velocity = direction.normalized() * min(speed+speedup, maxspeed)
 			linear_velocity = velocity
+			#print(velocity.length())
 	
 	if position.y > get_viewport_rect().end.y:
 		queue_free()
