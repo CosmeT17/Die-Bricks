@@ -13,8 +13,11 @@ func _physics_process(delta):
 	
 	for body in bodies:
 		if body.is_in_group("Bricks"):
-			body.queue_free()
-			get_node("/root/World").score += 5
+			get_node("/root/World").score += 5*body.hp
+			if body.hp == 1:
+				body.queue_free()
+			else:
+				body.hp -= 1
 			
 		elif body.name == "Paddle":
 			var speed = linear_velocity.length()

@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk5yfomv422jh"]
+[gd_scene load_steps=10 format=3 uid="uid://bk5yfomv422jh"]
 
 [ext_resource type="Script" path="res://Scripts/Paddle.gd" id="1_6tsrj"]
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_uxge2"]
 [ext_resource type="Texture2D" uid="uid://jk35hbo5tp5q" path="res://Textures/Paddle.png" id="2_50acd"]
 [ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
+[ext_resource type="Texture2D" uid="uid://ct1cpruj3gxem" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
+[ext_resource type="Texture2D" uid="uid://c2kt02rriq3v8" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
+[ext_resource type="Texture2D" uid="uid://tp558ea4jv4l" path="res://Textures/Bricks/Brick-3.png" id="7_uw3yf"]
+[ext_resource type="Texture2D" uid="uid://pdcq0qphror" path="res://Textures/Bricks/Brick-2.png" id="8_8cpa8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxtj"]
 size = Vector2(80, 8)
@@ -22,6 +26,7 @@ texture = ExtResource("2_50acd")
 metadata/_edit_lock_ = true
 
 [node name="Collision" type="CollisionShape2D" parent="Paddle"]
+visible = false
 shape = SubResource("RectangleShape2D_kaxtj")
 metadata/_edit_lock_ = true
 
@@ -35,83 +40,205 @@ polygon = PackedVector2Array(0, 384, -32, 384, -32, -32, 672, -32, 672, 384, 640
 
 [node name="Bricks" type="Node2D" parent="."]
 
-[node name="Brick1" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(320, 64)
-
-[node name="Brick2" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(384, 64)
-
-[node name="Brick3" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(448, 64)
-
-[node name="Brick4" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(256, 64)
-
-[node name="Brick5" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(192, 64)
-
-[node name="Brick6" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(128, 64)
-
-[node name="Brick7" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(512, 64)
-
-[node name="Brick8" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Brick_1" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(64, 64)
+hp = 5
 
-[node name="Brick9" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_1" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_2" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(128, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_2" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_3" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(192, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_3" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_4" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_4" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_5" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_5" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_6" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_6" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_7" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(448, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_7" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_8" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(512, 64)
+hp = 5
+
+[node name="Sprite" parent="Bricks/Brick_8" index="0"]
+texture = ExtResource("5_rviqr")
+
+[node name="Brick_9" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(576, 64)
+hp = 5
 
-[node name="Brick10" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(256, 160)
+[node name="Sprite" parent="Bricks/Brick_9" index="0"]
+texture = ExtResource("5_rviqr")
 
-[node name="Brick11" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Brick_10" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(128, 96)
+hp = 4
 
-[node name="Brick12" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_10" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_11" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(192, 96)
+hp = 4
 
-[node name="Brick13" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_11" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_12" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(256, 96)
+hp = 4
 
-[node name="Brick14" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_12" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_13" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(320, 96)
+hp = 4
 
-[node name="Brick15" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_13" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_14" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(384, 96)
+hp = 4
 
-[node name="Brick16" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_14" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_15" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(448, 96)
+hp = 4
 
-[node name="Brick17" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_15" index="0"]
+texture = ExtResource("6_4t5fh")
+
+[node name="Brick_16" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(512, 96)
+hp = 4
 
-[node name="Brick18" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(320, 160)
+[node name="Sprite" parent="Bricks/Brick_16" index="0"]
+texture = ExtResource("6_4t5fh")
 
-[node name="Brick19" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(384, 160)
-
-[node name="Brick20" parent="Bricks" instance=ExtResource("3_fil71")]
-position = Vector2(320, 192)
-
-[node name="Brick21" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Brick_17" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(192, 128)
+hp = 3
 
-[node name="Brick22" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_17" index="0"]
+texture = ExtResource("7_uw3yf")
+
+[node name="Brick_18" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(256, 128)
+hp = 3
 
-[node name="Brick23" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_18" index="0"]
+texture = ExtResource("7_uw3yf")
+
+[node name="Brick_19" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(320, 128)
+hp = 3
 
-[node name="Brick24" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_19" index="0"]
+texture = ExtResource("7_uw3yf")
+
+[node name="Brick_20" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(384, 128)
+hp = 3
 
-[node name="Brick25" parent="Bricks" instance=ExtResource("3_fil71")]
+[node name="Sprite" parent="Bricks/Brick_20" index="0"]
+texture = ExtResource("7_uw3yf")
+
+[node name="Brick_21" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(448, 128)
+hp = 3
+
+[node name="Sprite" parent="Bricks/Brick_21" index="0"]
+texture = ExtResource("7_uw3yf")
+
+[node name="Brick_22" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(256, 160)
+hp = 2
+
+[node name="Sprite" parent="Bricks/Brick_22" index="0"]
+texture = ExtResource("8_8cpa8")
+
+[node name="Brick_23" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 160)
+hp = 2
+
+[node name="Sprite" parent="Bricks/Brick_23" index="0"]
+texture = ExtResource("8_8cpa8")
+
+[node name="Brick_24" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(384, 160)
+hp = 2
+
+[node name="Sprite" parent="Bricks/Brick_24" index="0"]
+texture = ExtResource("8_8cpa8")
+
+[node name="Brick_25" parent="Bricks" instance=ExtResource("3_fil71")]
+position = Vector2(320, 192)
 
 [node name="Score" type="Label" parent="."]
 offset_right = 128.0
 offset_bottom = 23.0
 text = " Score: 0"
 vertical_alignment = 1
+
+[editable path="Bricks/Brick_1"]
+[editable path="Bricks/Brick_2"]
+[editable path="Bricks/Brick_3"]
+[editable path="Bricks/Brick_4"]
+[editable path="Bricks/Brick_5"]
+[editable path="Bricks/Brick_6"]
+[editable path="Bricks/Brick_7"]
+[editable path="Bricks/Brick_8"]
+[editable path="Bricks/Brick_9"]
+[editable path="Bricks/Brick_10"]
+[editable path="Bricks/Brick_11"]
+[editable path="Bricks/Brick_12"]
+[editable path="Bricks/Brick_13"]
+[editable path="Bricks/Brick_14"]
+[editable path="Bricks/Brick_15"]
+[editable path="Bricks/Brick_16"]
+[editable path="Bricks/Brick_17"]
+[editable path="Bricks/Brick_18"]
+[editable path="Bricks/Brick_19"]
+[editable path="Bricks/Brick_20"]
+[editable path="Bricks/Brick_21"]
+[editable path="Bricks/Brick_22"]
+[editable path="Bricks/Brick_23"]
+[editable path="Bricks/Brick_24"]
+[editable path="Bricks/Brick_25"]
