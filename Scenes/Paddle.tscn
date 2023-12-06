@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://djs1hf8oqkabo"]
+
+[ext_resource type="Script" path="res://Scripts/Paddle.gd" id="1_d7tgj"]
+[ext_resource type="Texture2D" uid="uid://jk35hbo5tp5q" path="res://Textures/Paddle.png" id="2_73j5p"]
+[ext_resource type="Texture2D" uid="uid://ka4fpd2h60fw" path="res://Textures/Arrow.png" id="3_p42ou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxtj"]
+size = Vector2(80, 8)
+
+[node name="Paddle" type="CharacterBody2D"]
+script = ExtResource("1_d7tgj")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_73j5p")
+metadata/_edit_lock_ = true
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_kaxtj")
+metadata/_edit_lock_ = true
+
+[node name="Anchor" type="Marker2D" parent="."]
+position = Vector2(0, 32)
+metadata/_edit_lock_ = true
+
+[node name="Arrow" type="Marker2D" parent="."]
+position = Vector2(0, -10)
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="Sprite2D" parent="Arrow"]
+position = Vector2(-12, -12)
+scale = Vector2(2, 2)
+texture = ExtResource("3_p42ou")
+metadata/_edit_lock_ = true
+
+[node name="Direction" type="Marker2D" parent="Arrow"]
+position = Vector2(-24, -24)
+metadata/_edit_lock_ = true

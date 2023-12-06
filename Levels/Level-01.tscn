@@ -1,37 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk5yfomv422jh"]
+[gd_scene load_steps=8 format=3 uid="uid://bk5yfomv422jh"]
 
-[ext_resource type="Script" path="res://Scripts/Paddle.gd" id="1_6tsrj"]
-[ext_resource type="Script" path="res://Scripts/World.gd" id="1_uxge2"]
-[ext_resource type="Texture2D" uid="uid://jk35hbo5tp5q" path="res://Textures/Paddle.png" id="2_50acd"]
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_uxge2"]
 [ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
 [ext_resource type="Texture2D" uid="uid://ct1cpruj3gxem" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
 [ext_resource type="Texture2D" uid="uid://c2kt02rriq3v8" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
+[ext_resource type="PackedScene" uid="uid://djs1hf8oqkabo" path="res://Scenes/Paddle.tscn" id="7_enm5k"]
 [ext_resource type="Texture2D" uid="uid://tp558ea4jv4l" path="res://Textures/Bricks/Brick-3.png" id="7_uw3yf"]
 [ext_resource type="Texture2D" uid="uid://pdcq0qphror" path="res://Textures/Bricks/Brick-2.png" id="8_8cpa8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaxtj"]
-size = Vector2(80, 8)
-
-[node name="World" type="Node2D"]
+[node name="Level" type="Node2D"]
 script = ExtResource("1_uxge2")
 
-[node name="Paddle" type="CharacterBody2D" parent="."]
-position = Vector2(320, 336)
-script = ExtResource("1_6tsrj")
-
-[node name="Sprite2D" type="Sprite2D" parent="Paddle"]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_50acd")
-metadata/_edit_lock_ = true
-
-[node name="Collision" type="CollisionShape2D" parent="Paddle"]
-visible = false
-shape = SubResource("RectangleShape2D_kaxtj")
-metadata/_edit_lock_ = true
-
-[node name="Anchor" type="Marker2D" parent="Paddle"]
-position = Vector2(0, 32)
+[node name="Score" type="Label" parent="."]
+offset_right = 128.0
+offset_bottom = 23.0
+text = " Score: 0"
+vertical_alignment = 1
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
@@ -211,11 +195,8 @@ texture = ExtResource("8_8cpa8")
 [node name="Brick_25" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(320, 192)
 
-[node name="Score" type="Label" parent="."]
-offset_right = 128.0
-offset_bottom = 23.0
-text = " Score: 0"
-vertical_alignment = 1
+[node name="Paddle" parent="." instance=ExtResource("7_enm5k")]
+position = Vector2(320, 336)
 
 [editable path="Bricks/Brick_1"]
 [editable path="Bricks/Brick_2"]
