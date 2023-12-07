@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_uxge2"]
 [ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
-[ext_resource type="Texture2D" uid="uid://ct1cpruj3gxem" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
-[ext_resource type="Texture2D" uid="uid://c2kt02rriq3v8" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
+[ext_resource type="Texture2D" uid="uid://cgdu0827yvs7w" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
+[ext_resource type="Texture2D" uid="uid://cruho50ol2i5x" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
 [ext_resource type="PackedScene" uid="uid://djs1hf8oqkabo" path="res://Scenes/Paddle.tscn" id="7_enm5k"]
-[ext_resource type="Texture2D" uid="uid://tp558ea4jv4l" path="res://Textures/Bricks/Brick-3.png" id="7_uw3yf"]
-[ext_resource type="Texture2D" uid="uid://pdcq0qphror" path="res://Textures/Bricks/Brick-2.png" id="8_8cpa8"]
+[ext_resource type="Texture2D" uid="uid://bbcfievmi1pos" path="res://Textures/Bricks/Brick-3.png" id="7_uw3yf"]
+[ext_resource type="Texture2D" uid="uid://chrkvfj8kwn2e" path="res://Textures/Bricks/Brick-2.png" id="8_8cpa8"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_uxge2")
