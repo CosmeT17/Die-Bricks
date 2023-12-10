@@ -28,7 +28,3 @@ func _physics_process(delta):
 	
 	if position.y > get_viewport_rect().end.y:
 		queue_free()
-		var paddle = get_node("/root/Level").get_node("Paddle")
-		paddle.arrow.rotation_degrees = paddle.rng.randi_range(-35, 125)
-		paddle.get_node("Arrow").visible = true
-		paddle.can_shoot = true

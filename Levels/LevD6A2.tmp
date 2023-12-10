@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
 [ext_resource type="Texture2D" uid="uid://cgdu0827yvs7w" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
 [ext_resource type="Texture2D" uid="uid://cruho50ol2i5x" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
-[ext_resource type="PackedScene" uid="uid://wkl83xrldtlv" path="res://Scenes/Tutorial.tscn" id="7_dje0m"]
+[ext_resource type="Script" path="res://Scripts/Tutorial.gd" id="7_leiqv"]
 [ext_resource type="Texture2D" uid="uid://bbcfievmi1pos" path="res://Textures/Bricks/Brick-3.png" id="7_uw3yf"]
 [ext_resource type="Texture2D" uid="uid://chrkvfj8kwn2e" path="res://Textures/Bricks/Brick-2.png" id="8_8cpa8"]
 
@@ -195,8 +195,51 @@ texture = ExtResource("8_8cpa8")
 [node name="Brick_25" parent="Bricks" instance=ExtResource("3_fil71")]
 position = Vector2(320, 192)
 
-[node name="Tutorial" parent="." instance=ExtResource("7_dje0m")]
+[node name="Tutorial" type="Polygon2D" parent="."]
 position = Vector2(0, -16)
+color = Color(0.203922, 0.203922, 0.203922, 1)
+polygon = PackedVector2Array(16, 256, 16, 352, 624, 352, 624, 256)
+
+[node name="Timer" type="Timer" parent="Tutorial"]
+wait_time = 0.05
+autostart = true
+
+[node name="Title" type="Label" parent="Tutorial"]
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 384.0
+offset_bottom = 288.0
+theme_type_variation = &"GraphNodeTitleLabel"
+text = "TUTORIAL"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="Text" type="RichTextLabel" parent="Tutorial"]
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 608.0
+offset_bottom = 336.0
+bbcode_enabled = true
+script = ExtResource("7_leiqv")
+
+[node name="Page" type="Label" parent="Tutorial/Text"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.028
+anchor_top = -0.667
+anchor_right = -0.028
+anchor_bottom = -0.667
+offset_left = 496.128
+offset_top = 64.016
+offset_right = 592.128
+offset_bottom = 84.016
+theme_override_font_sizes/font_size = 14
+text = "1/5"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="timeout" from="Tutorial/Timer" to="Tutorial/Text" method="_on_timer_timeout"]
 
 [editable path="Bricks/Brick_1"]
 [editable path="Bricks/Brick_2"]
