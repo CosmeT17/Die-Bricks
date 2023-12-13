@@ -17,6 +17,7 @@ func _ready():
 	visible_characters = 0
 	text = dialog[page_num]
 	Page.text = "%d/%d" % [page_num+1, dialog.size()]
+	Instructions.visible = false
 	set_process_input(true)
 	
 func _input(event):

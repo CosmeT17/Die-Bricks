@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk5yfomv422jh"]
+[gd_scene load_steps=9 format=3 uid="uid://bk5yfomv422jh"]
 
 [ext_resource type="Script" path="res://Scripts/Level.gd" id="1_uxge2"]
+[ext_resource type="PackedScene" uid="uid://rjsjwf2ojp33" path="res://Scenes/Lives.tscn" id="2_nicuu"]
 [ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="3_fil71"]
 [ext_resource type="Texture2D" uid="uid://cgdu0827yvs7w" path="res://Textures/Bricks/Brick-5.png" id="5_rviqr"]
 [ext_resource type="Texture2D" uid="uid://cruho50ol2i5x" path="res://Textures/Bricks/Brick-4.png" id="6_4t5fh"]
@@ -13,9 +14,11 @@ script = ExtResource("1_uxge2")
 
 [node name="Score" type="Label" parent="."]
 offset_right = 128.0
-offset_bottom = 23.0
+offset_bottom = 32.0
 text = " Score: 0"
 vertical_alignment = 1
+
+[node name="Lives" parent="." instance=ExtResource("2_nicuu")]
 
 [node name="Walls" type="StaticBody2D" parent="."]
 
