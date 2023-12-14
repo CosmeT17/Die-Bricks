@@ -19,7 +19,7 @@ func _ready():
 	Page.text = "%d/%d" % [page_num+1, dialog.size()]
 	Instructions.visible = false
 	set_process_input(true)
-	
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
@@ -30,11 +30,7 @@ func _input(event):
 					text = dialog[page_num]
 					Page.text = "%d/%d" % [page_num+1, dialog.size()]
 				else:
-					pass
-					get_parent().queue_free()
-					var Paddle = paddle_scene.instantiate()
-					Paddle.position = Vector2(get_viewport_rect().end.x/2, get_viewport_rect().end.y-24)
-					get_tree().root.add_child(Paddle)
+					spawn_paddle()
 			else:
 				visible_characters = get_total_character_count()
 
@@ -46,3 +42,12 @@ func _on_timer_timeout():
 		Instructions.visible = true
 	elif page_num != 0:
 		Instructions.visible = false
+
+func _on_button_button_down():
+	spawn_paddle()
+
+func spawn_paddle():
+	get_parent().queue_free()
+	var Paddle = paddle_scene.instantiate()
+	Paddle.position = Vector2(get_viewport_rect().end.x/2, get_viewport_rect().end.y-24)
+	get_tree().root.add_child(Paddle)
