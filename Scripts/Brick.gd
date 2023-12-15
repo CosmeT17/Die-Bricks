@@ -9,7 +9,7 @@ const TEXTURES = {
 }
 @export var hp: int = 1: set = set_hp, get = get_hp
 
-func set_hp(value):
+func set_hp(value: int):
 	hp = value
 	$Sprite.texture = load(TEXTURES[hp])
 

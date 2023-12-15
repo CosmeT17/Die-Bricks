@@ -10,7 +10,7 @@ func _ready():
 	Life_2.visible = true
 	Life_3.visible = true
 
-func set_lives(value):
+func set_lives(value: int):
 	lives = value
 	match lives:
 		0:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dllkgl8241o75"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_4p3bs"]
-[ext_resource type="Texture2D" uid="uid://c0hue4p2x0wxd" path="res://Textures/Ball.png" id="2_xe0vr"]
+[ext_resource type="Texture2D" uid="uid://v3i5qdkdbhqu" path="res://Textures/Balls/Ball.png" id="2_3j36d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5ts3g"]
 friction = 0.0
@@ -19,12 +19,11 @@ contact_monitor = true
 linear_damp_mode = 1
 angular_damp_mode = 1
 script = ExtResource("1_4p3bs")
-metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
-texture = ExtResource("2_xe0vr")
+texture = ExtResource("2_3j36d")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 visible = false

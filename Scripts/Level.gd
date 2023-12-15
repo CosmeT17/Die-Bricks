@@ -2,7 +2,7 @@ extends Node2D
 
 var score: int = 0: set = set_score, get = get_score
 
-func set_score(value):
+func set_score(value: int):
 	score = value
 	get_node("Score").text = "Score: " + str(score)
 	

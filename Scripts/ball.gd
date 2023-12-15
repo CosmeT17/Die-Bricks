@@ -1,11 +1,17 @@
 extends RigidBody2D
 
+const PARTICLES = {
+	"Fireball": preload("res://Scenes/Fireball.tscn")
+}
+var Particle: GPUParticles2D = null: set = set_particle
+
 @export var start_speed: int = 280
 @export var speedup: int = 10
 @export var max_speed: int = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#set_particle(PARTICLES["Fireball"].instantiate())
 	set_physics_process(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,3 +36,8 @@ func _physics_process(delta):
 		queue_free()
 		var Lives = get_node(("/root/Level/Lives"))
 		Lives.lives -= 1
+		
+func set_particle(new_particle: GPUParticles2D):
+	if Particle: Particle.queue_free()
+	if new_particle: add_child(new_particle)
+	Particle = new_particle
