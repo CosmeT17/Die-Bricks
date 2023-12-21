@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://rjsjwf2ojp33"]
 
 [ext_resource type="Script" path="res://Scripts/Lives.gd" id="1_8tcvl"]
-[ext_resource type="Texture2D" uid="uid://puvevtoyjo26" path="res://Textures/Heart.png" id="2_rr43c"]
+[ext_resource type="Texture2D" uid="uid://b1g5co5ht1xhk" path="res://Textures/Heart.png" id="2_rr43c"]
 
 [node name="Lives" type="Label"]
 offset_left = 512.0

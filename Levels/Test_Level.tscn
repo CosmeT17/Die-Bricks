@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://31uy34x2ojne"]
+
+[ext_resource type="PackedScene" uid="uid://c7x66paw52rym" path="res://Scenes/Border.tscn" id="1_fg2kp"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Border" parent="." instance=ExtResource("1_fg2kp")]
