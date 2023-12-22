@@ -22,9 +22,9 @@ func set_lives(value: int) -> void:
 func get_lives() -> int:
 	return lives
 
-func format_score(score : String) -> String:
-	var i : int = score.length() - 3
+func format_score(val : String) -> String:
+	var i : int = val.length() - 3
 	while i > 0:
-		score = score.insert(i, ",")
+		val = val.insert(i, ",")
 		i = i - 3
-	return score
+	return val

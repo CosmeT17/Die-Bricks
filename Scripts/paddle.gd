@@ -17,7 +17,7 @@ func _ready():
 	rng.randomize()
 	Arrow.rotation_degrees = rng.randi_range(-35, 125)
 		
-func _physics_process(delta):
+func _physics_process(_delta):
 	var y = get_position().y
 	var mouse_x = get_viewport().get_mouse_position().x
 	set_position(Vector2(mouse_x, y))
