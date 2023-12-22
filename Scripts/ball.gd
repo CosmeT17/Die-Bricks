@@ -36,7 +36,7 @@ func _physics_process(delta):
 	if position.y > get_viewport_rect().end.y:
 		queue_free()
 		var Lives = get_node(("/root/Level/Lives"))
-		Lives.lives -= 1
+		get_parent().lives -= 1
 		
 func set_particle(new_particle: GPUParticles2D):
 	if Particle: Particle.queue_free()
