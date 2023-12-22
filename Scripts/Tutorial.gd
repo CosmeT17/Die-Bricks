@@ -1,6 +1,6 @@
 extends RichTextLabel
 
-const paddle_scene = preload("res://Scenes/Paddle.tscn")
+const paddle_scene = preload("res://Scenes/World/Paddle.tscn")
 var dialog = [
 	"Welcome to Brick Destroyer!",
 	"Move the paddle with the mouse.",
@@ -46,7 +46,7 @@ func _on_timer_timeout():
 func _on_button_button_down():
 	spawn_paddle()
 
-func spawn_paddle():
+func spawn_paddle() -> void:
 	get_parent().queue_free()
 	var Paddle = paddle_scene.instantiate()
 	Paddle.position = Vector2(get_viewport_rect().end.x/2, get_viewport_rect().end.y-24)

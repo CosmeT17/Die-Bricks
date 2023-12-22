@@ -1,70 +1,113 @@
 [gd_scene load_steps=7 format=3 uid="uid://31uy34x2ojne"]
 
-[ext_resource type="PackedScene" uid="uid://c7x66paw52rym" path="res://Scenes/World.tscn" id="1_fg2kp"]
-[ext_resource type="PackedScene" uid="uid://bj4sow7kq4wjh" path="res://Scenes/Brick.tscn" id="2_fr6nx"]
-[ext_resource type="Texture2D" uid="uid://qmg5y0q3uauy" path="res://Textures/Bricks/Brick-5.png" id="3_m1sc5"]
-[ext_resource type="Texture2D" uid="uid://b8ae6etrkpv1j" path="res://Textures/Bricks/Brick-4.png" id="4_fmhqa"]
-[ext_resource type="Texture2D" uid="uid://cpfu4lgcybewe" path="res://Textures/Bricks/Brick-3.png" id="5_imho1"]
-[ext_resource type="Texture2D" uid="uid://c5bfyuqcli6m3" path="res://Textures/Bricks/Brick-2.png" id="6_abj1c"]
+[ext_resource type="PackedScene" uid="uid://c7x66paw52rym" path="res://Scenes/World/World.tscn" id="1_fg2kp"]
+[ext_resource type="PackedScene" uid="uid://c0kplvnxl677g" path="res://Scenes/Bricks/Regular/Pink_Brick.tscn" id="2_lfldg"]
+[ext_resource type="PackedScene" uid="uid://dp06ln74pk7w8" path="res://Scenes/Bricks/Regular/Yellow_Brick.tscn" id="3_2be17"]
+[ext_resource type="PackedScene" uid="uid://jbk5ivol4qoh" path="res://Scenes/Bricks/Regular/Green_Brick.tscn" id="4_teod2"]
+[ext_resource type="PackedScene" uid="uid://d0en2v04arxx6" path="res://Scenes/Bricks/Regular/Blue_Brick.tscn" id="5_qdp53"]
+[ext_resource type="PackedScene" uid="uid://difw2ye3p13ge" path="res://Scenes/Bricks/Regular/Purple_Brick.tscn" id="6_bemas"]
 
 [node name="Test_Level" type="Node2D"]
 
 [node name="World" parent="." instance=ExtResource("1_fg2kp")]
 
-[node name="Purple" parent="World/Bricks" index="0" instance=ExtResource("2_fr6nx")]
-position = Vector2(640, 96)
-scale = Vector2(2, 2)
-hp = 5
+[node name="Pink_Brick_1" parent="World/Bricks" index="0" instance=ExtResource("2_lfldg")]
+position = Vector2(640, 352)
 
-[node name="Sprite" parent="World/Bricks/Purple" index="0"]
-texture = ExtResource("3_m1sc5")
-
-[node name="Collision" parent="World/Bricks/Purple" index="1"]
-visible = true
-
-[node name="Blue" parent="World/Bricks" index="1" instance=ExtResource("2_fr6nx")]
-position = Vector2(256, 160)
-scale = Vector2(2, 2)
-hp = 4
-
-[node name="Sprite" parent="World/Bricks/Blue" index="0"]
-texture = ExtResource("4_fmhqa")
-
-[node name="Collision" parent="World/Bricks/Blue" index="1"]
-visible = true
-
-[node name="Green" parent="World/Bricks" index="2" instance=ExtResource("2_fr6nx")]
-position = Vector2(1088, 224)
-scale = Vector2(2, 2)
-hp = 3
-
-[node name="Sprite" parent="World/Bricks/Green" index="0"]
-texture = ExtResource("5_imho1")
-
-[node name="Collision" parent="World/Bricks/Green" index="1"]
-visible = true
-
-[node name="Yellow" parent="World/Bricks" index="3" instance=ExtResource("2_fr6nx")]
-position = Vector2(256, 288)
-scale = Vector2(2, 2)
+[node name="Yellow_Brick_1" parent="World/Bricks" index="1" instance=ExtResource("3_2be17")]
+position = Vector2(512, 288)
 hp = 2
 
-[node name="Sprite" parent="World/Bricks/Yellow" index="0"]
-texture = ExtResource("6_abj1c")
+[node name="Yellow_Brick_2" parent="World/Bricks" index="2" instance=ExtResource("3_2be17")]
+position = Vector2(640, 288)
+hp = 2
 
-[node name="Collision" parent="World/Bricks/Yellow" index="1"]
-visible = true
+[node name="Yellow_Brick_3" parent="World/Bricks" index="3" instance=ExtResource("3_2be17")]
+position = Vector2(768, 288)
+hp = 2
 
-[node name="Pink" parent="World/Bricks" index="4" instance=ExtResource("2_fr6nx")]
-position = Vector2(1088, 352)
-scale = Vector2(2, 2)
+[node name="Green_Brick_1" parent="World/Bricks" index="4" instance=ExtResource("4_teod2")]
+position = Vector2(384, 224)
+hp = 3
 
-[node name="Collision" parent="World/Bricks/Pink" index="1"]
-visible = true
+[node name="Green_Brick_2" parent="World/Bricks" index="5" instance=ExtResource("4_teod2")]
+position = Vector2(512, 224)
+hp = 3
+
+[node name="Green_Brick_3" parent="World/Bricks" index="6" instance=ExtResource("4_teod2")]
+position = Vector2(640, 224)
+hp = 3
+
+[node name="Green_Brick_4" parent="World/Bricks" index="7" instance=ExtResource("4_teod2")]
+position = Vector2(768, 224)
+hp = 3
+
+[node name="Green_Brick_5" parent="World/Bricks" index="8" instance=ExtResource("4_teod2")]
+position = Vector2(896, 224)
+hp = 3
+
+[node name="Blue_Brick_1" parent="World/Bricks" index="9" instance=ExtResource("5_qdp53")]
+position = Vector2(256, 160)
+hp = 4
+
+[node name="Blue_Brick_2" parent="World/Bricks" index="10" instance=ExtResource("5_qdp53")]
+position = Vector2(384, 160)
+hp = 4
+
+[node name="Blue_Brick_3" parent="World/Bricks" index="11" instance=ExtResource("5_qdp53")]
+position = Vector2(512, 160)
+hp = 4
+
+[node name="Blue_Brick_4" parent="World/Bricks" index="12" instance=ExtResource("5_qdp53")]
+position = Vector2(640, 160)
+hp = 4
+
+[node name="Blue_Brick_5" parent="World/Bricks" index="13" instance=ExtResource("5_qdp53")]
+position = Vector2(768, 160)
+hp = 4
+
+[node name="Blue_Brick_6" parent="World/Bricks" index="14" instance=ExtResource("5_qdp53")]
+position = Vector2(896, 160)
+hp = 4
+
+[node name="Blue_Brick_7" parent="World/Bricks" index="15" instance=ExtResource("5_qdp53")]
+position = Vector2(1024, 160)
+hp = 4
+
+[node name="Purple_Brick_1" parent="World/Bricks" index="16" instance=ExtResource("6_bemas")]
+position = Vector2(128, 96)
+hp = 5
+
+[node name="Purple_Brick_2" parent="World/Bricks" index="17" instance=ExtResource("6_bemas")]
+position = Vector2(256, 96)
+hp = 5
+
+[node name="Purple_Brick_3" parent="World/Bricks" index="18" instance=ExtResource("6_bemas")]
+position = Vector2(384, 96)
+hp = 5
+
+[node name="Purple_Brick_4" parent="World/Bricks" index="19" instance=ExtResource("6_bemas")]
+position = Vector2(512, 96)
+hp = 5
+
+[node name="Purple_Brick_5" parent="World/Bricks" index="20" instance=ExtResource("6_bemas")]
+position = Vector2(640, 96)
+hp = 5
+
+[node name="Purple_Brick_6" parent="World/Bricks" index="21" instance=ExtResource("6_bemas")]
+position = Vector2(768, 96)
+hp = 5
+
+[node name="Purple_Brick_7" parent="World/Bricks" index="22" instance=ExtResource("6_bemas")]
+position = Vector2(896, 96)
+hp = 5
+
+[node name="Purple_Brick_8" parent="World/Bricks" index="23" instance=ExtResource("6_bemas")]
+position = Vector2(1024, 96)
+hp = 5
+
+[node name="Purple_Brick_9" parent="World/Bricks" index="24" instance=ExtResource("6_bemas")]
+position = Vector2(1152, 96)
+hp = 5
 
 [editable path="World"]
-[editable path="World/Bricks/Purple"]
-[editable path="World/Bricks/Blue"]
-[editable path="World/Bricks/Green"]
-[editable path="World/Bricks/Yellow"]
-[editable path="World/Bricks/Pink"]

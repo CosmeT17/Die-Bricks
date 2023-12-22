@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const ball_scene = preload("res://Scenes/Ball.tscn")
+const ball_scene = preload("res://Scenes/Balls/Ball.tscn")
 var rng = RandomNumberGenerator.new()
 var can_shoot: bool = true
 
@@ -47,7 +47,7 @@ func _input(event):
 				get_parent().add_child(Ball)
 				can_shoot = false
 
-func shoot_ball():
+func shoot_ball() -> void:
 	Arrow.rotation_degrees = rng.randi_range(-35, 125)
 	Arrow.visible = true
 	can_shoot = true

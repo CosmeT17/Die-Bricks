@@ -1,7 +1,8 @@
 extends RigidBody2D
 
+const game_over_scene = preload("res://Scenes/World/Game_Over.tscn")
 const PARTICLES = {
-	"Fireball": preload("res://Scenes/Fireball.tscn")
+	"Fireball": preload("res://Scenes/Balls/Fireball.tscn")
 }
 var Particle: GPUParticles2D = null: set = set_particle
 
@@ -16,12 +17,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var Parent = get_parent()
+	
+	if get_tree().get_nodes_in_group("Bricks").size() == 0:
+		game_over("Win")
+		queue_free()
+		
 	var bodies = get_colliding_bodies()
 	
 	for body in bodies:
 		if body.is_in_group("Bricks"):
 			body.hits += 1
-			get_parent().score += 5 * body.hits
+			Parent.score += 5 * body.hits
+			
 			if body.hp == 1:
 				body.queue_free()
 			else:
@@ -35,10 +43,18 @@ func _physics_process(delta):
 	
 	if position.y > get_viewport_rect().end.y:
 		queue_free()
-		var Lives = get_node(("/root/Level/Lives"))
-		get_parent().lives -= 1
-		
-func set_particle(new_particle: GPUParticles2D):
+		Parent.lives -= 1
+		if Parent.lives < 1:
+			game_over("Ded")
+
+func set_particle(new_particle: GPUParticles2D) -> void:
 	if Particle: Particle.queue_free()
 	if new_particle: add_child(new_particle)
 	Particle = new_particle
+
+func game_over(msg: String) -> void:
+	var Parent = get_parent()
+	Parent.get_node("Paddle").queue_free()
+	var Game_Over = game_over_scene.instantiate()
+	Game_Over.get_node("Message").text = msg
+	Parent.add_child(Game_Over)

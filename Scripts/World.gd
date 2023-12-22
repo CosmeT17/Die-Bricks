@@ -7,17 +7,24 @@ var score: int = 0: set = set_score, get = get_score
 func _ready():
 	Hearts.frame = lives
 
-func set_score(value: int):
+func set_score(value: int) -> void:
 	score = value
-	get_node("Score").text = "Score: " + str(score)
+	get_node("Score").text = "Score: " + format_score(str(score))
 	
-func get_score():
+func get_score() -> int:
 	return score
 
-func set_lives(value: int):
+func set_lives(value: int) -> void:
 	lives = value
 	if Hearts:
 		Hearts.frame = lives
 
-func get_lives():
+func get_lives() -> int:
 	return lives
+
+func format_score(score : String) -> String:
+	var i : int = score.length() - 3
+	while i > 0:
+		score = score.insert(i, ",")
+		i = i - 3
+	return score

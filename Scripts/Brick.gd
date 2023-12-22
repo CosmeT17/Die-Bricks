@@ -1,18 +1,13 @@
 extends StaticBody2D
 
-const TEXTURES = {
-	1: "res://Textures/Bricks/Brick-1.png",
-	2: "res://Textures/Bricks/Brick-2.png",
-	3: "res://Textures/Bricks/Brick-3.png",
-	4: "res://Textures/Bricks/Brick-4.png",
-	5: "res://Textures/Bricks/Brick-5.png",
-}
 @export var hp: int = 1: set = set_hp, get = get_hp
+@onready var Brick = $Brick
 var hits: int = 0
 
-func set_hp(value: int):
+func set_hp(value: int) -> void:
 	hp = value
-	$Sprite.texture = load(TEXTURES[hp])
+	if Brick:
+		Brick.frame = hits
 
-func get_hp():
+func get_hp() -> int:
 	return hp

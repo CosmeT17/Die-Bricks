@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1tidlxjc56x8"]
+
+[ext_resource type="FontFile" uid="uid://tdvfq878rjt6" path="res://Fonts/Orbitron-Bold.ttf" id="1_xbc5c"]
+
+[node name="Game_Over" type="Polygon2D"]
+color = Color(0.203922, 0.203922, 0.203922, 1)
+polygon = PackedVector2Array(64, 64, 64, 656, 1216, 656, 1216, 64)
+
+[node name="Message" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 1216.0
+offset_bottom = 656.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 25
+theme_override_fonts/font = ExtResource("1_xbc5c")
+theme_override_font_sizes/font_size = 225
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
