@@ -9,7 +9,7 @@ func _ready():
 	set_physics_process(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	var bodies = get_colliding_bodies()
 	
 	for body in bodies:
