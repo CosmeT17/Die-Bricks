@@ -7,7 +7,6 @@ var can_shoot: bool = true
 @onready var Arrow = $Arrow
 @onready var Direction = Arrow.get_node("Direction")
 
-@export var lives: int = 3
 @export var arrow_speedup: int = 3
 @export var clockwise: bool = true
 
@@ -42,10 +41,10 @@ func _input(event):
 				Arrow.visible = false
 				var Ball = ball_scene.instantiate()
 				Ball.tree_exited.connect(self.shoot_ball)
-				Ball.position = position - Vector2(0,10)
+				Ball.position = position - Vector2(0,20)
 				var direction_vector = Direction.global_position - Ball.global_position
-				Ball.linear_velocity = direction_vector.normalized() * Ball.start_speed
-				get_tree().root.add_child(Ball)
+				Ball.linear_velocity = direction_vector.normalized() * Ball.start_speed				
+				get_parent().add_child(Ball)
 				can_shoot = false
 
 func shoot_ball():

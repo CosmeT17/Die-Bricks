@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7x66paw52rym"]
+[gd_scene load_steps=10 format=3 uid="uid://c7x66paw52rym"]
 
 [ext_resource type="FontFile" uid="uid://tdvfq878rjt6" path="res://Fonts/Orbitron-Bold.ttf" id="1_fi3nw"]
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_gr3df"]
 [ext_resource type="Texture2D" uid="uid://cu77sgbb3r2qo" path="res://Textures/Hearts.png" id="2_2bqfj"]
+[ext_resource type="PackedScene" uid="uid://wkl83xrldtlv" path="res://Scenes/Tutorial.tscn" id="3_4frpi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_brss6"]
 atlas = ExtResource("2_2bqfj")
@@ -39,10 +41,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Border" type="StaticBody2D"]
+[node name="World" type="StaticBody2D"]
+script = ExtResource("1_gr3df")
+metadata/_edit_lock_ = true
 
 [node name="Collision" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(0, 0, 0, 768, -32, 768, -32, -32, 1312, -32, 1312, 768, 1280, 768, 1280, 0)
+metadata/_edit_lock_ = true
 
 [node name="Score" type="Label" parent="."]
 offset_right = 256.0
@@ -77,4 +82,11 @@ metadata/_edit_lock_ = true
 position = Vector2(176, 28)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_psf7t")
+frame = 3
+metadata/_edit_lock_ = true
+
+[node name="Tutorial" parent="." instance=ExtResource("3_4frpi")]
+metadata/_edit_lock_ = true
+
+[node name="Bricks" type="Node2D" parent="."]
 metadata/_edit_lock_ = true

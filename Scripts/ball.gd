@@ -5,9 +5,9 @@ const PARTICLES = {
 }
 var Particle: GPUParticles2D = null: set = set_particle
 
-@export var start_speed: int = 280
-@export var speedup: int = 10
-@export var max_speed: int = 500
+@export var start_speed: int = 500
+@export var speedup: int = 20
+@export var max_speed: int = 1000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +20,8 @@ func _physics_process(delta):
 	
 	for body in bodies:
 		if body.is_in_group("Bricks"):
-			get_node("/root/Level").score += 5 * body.hp
+			body.hits += 1
+			get_parent().score += 5 * body.hits
 			if body.hp == 1:
 				body.queue_free()
 			else:

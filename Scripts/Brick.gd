@@ -8,6 +8,7 @@ const TEXTURES = {
 	5: "res://Textures/Bricks/Brick-5.png",
 }
 @export var hp: int = 1: set = set_hp, get = get_hp
+var hits: int = 0
 
 func set_hp(value: int):
 	hp = value

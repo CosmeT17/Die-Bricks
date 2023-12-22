@@ -50,4 +50,4 @@ func spawn_paddle():
 	get_parent().queue_free()
 	var Paddle = paddle_scene.instantiate()
 	Paddle.position = Vector2(get_viewport_rect().end.x/2, get_viewport_rect().end.y-24)
-	get_tree().root.add_child(Paddle)
+	get_parent().get_parent().add_child(Paddle)
